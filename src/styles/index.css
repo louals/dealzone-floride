@@ -1,1 +1,228 @@
+/* Tailwind v4 core */
 @import "tailwindcss";
+
+/* Optional: remove this line if you don't use it */
+/* @import "tw-animate-css"; */
+
+/* Font (Inter) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+/* Dark-mode variant (class-based): .dark on <html> or <body> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Design Tokens (DealZone Florida) ---------- */
+:root {
+  /* Fallbacks (hex) then OKLCH (modern) */
+  --background: #f7f5ef;
+  --background: oklch(0.97 0.02 85);
+
+  --foreground: #1e2620;
+  --foreground: oklch(0.25 0.15 145);
+
+  --card: #ffffff;
+  --card: oklch(1 0 0);
+
+  --card-foreground: #2a332c;
+  --card-foreground: oklch(0.35 0.05 145);
+
+  --popover: #ffffff;
+  --popover: oklch(1 0 0);
+
+  --popover-foreground: #1e2620;
+  --popover-foreground: oklch(0.25 0.15 145);
+
+  /* Brand primary: deep green */
+  --primary: #1e2620;
+  --primary: oklch(0.25 0.15 145);
+  --primary-foreground: #ffffff;
+  --primary-foreground: oklch(1 0 0);
+
+  /* Brand accent: gold */
+  --secondary: #c9a86a;
+  --secondary: oklch(0.75 0.15 85);
+  --secondary-foreground: #ffffff;
+  --secondary-foreground: oklch(1 0 0);
+
+  --muted: #ece6d8;
+  --muted: oklch(0.92 0.03 85);
+  --muted-foreground: #3a463e;
+  --muted-foreground: oklch(0.45 0.05 145);
+
+  --accent: #c9a86a;
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: #1e2620;
+  --accent-foreground: oklch(0.25 0.15 145);
+
+  --destructive: #b22a2a;
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: #ffffff;
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: #e0d5bd;
+  --border: oklch(0.85 0.05 85);
+
+  --input: #ffffff;
+  --input: oklch(1 0 0);
+
+  --ring: #c9a86a;
+  --ring: oklch(0.75 0.15 85);
+
+  /* Charts */
+  --chart-1: oklch(0.25 0.15 145);
+  --chart-2: oklch(0.75 0.15 85);
+  --chart-3: oklch(0.92 0.03 85);
+  --chart-4: oklch(0.97 0.02 85);
+  --chart-5: oklch(0.6 0.2 25);
+
+  --radius: 0.5rem;
+
+  /* Sidebar (if you add one later) */
+  --sidebar: oklch(0.97 0.02 85);
+  --sidebar-foreground: oklch(0.25 0.15 145);
+  --sidebar-primary: oklch(0.92 0.03 85);
+  --sidebar-primary-foreground: oklch(0.25 0.15 145);
+  --sidebar-accent: oklch(0.75 0.15 85);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.85 0.05 85);
+  --sidebar-ring: oklch(0.75 0.15 85);
+}
+
+/* Dark theme */
+.dark {
+  --background: #0f1512;
+  --background: oklch(0.15 0.05 145);
+
+  --foreground: #f1f3ee;
+  --foreground: oklch(0.97 0.02 85);
+
+  --card: #18201b;
+  --card: oklch(0.2 0.05 145);
+
+  --card-foreground: #f1f3ee;
+  --card-foreground: oklch(0.97 0.02 85);
+
+  --popover: #18201b;
+  --popover: oklch(0.2 0.05 145);
+
+  --popover-foreground: #f1f3ee;
+  --popover-foreground: oklch(0.97 0.02 85);
+
+  --primary: #f1f3ee;
+  --primary: oklch(0.97 0.02 85);
+  --primary-foreground: #1e2620;
+  --primary-foreground: oklch(0.25 0.15 145);
+
+  --secondary: #203027;
+  --secondary: oklch(0.3 0.08 145);
+  --secondary-foreground: #f1f3ee;
+  --secondary-foreground: oklch(0.97 0.02 85);
+
+  --muted: #203027;
+  --muted: oklch(0.3 0.08 145);
+  --muted-foreground: #dcd6c6;
+  --muted-foreground: oklch(0.8 0.05 85);
+
+  --accent: #c9a86a;
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: #1e2620;
+  --accent-foreground: oklch(0.25 0.15 145);
+
+  --destructive: #8f1e1e;
+  --destructive: oklch(0.5 0.15 25);
+  --destructive-foreground: #f7d6d6;
+  --destructive-foreground: oklch(0.8 0.1 25);
+
+  --border: #203027;
+  --border: oklch(0.3 0.08 145);
+
+  --input: #203027;
+  --input: oklch(0.3 0.08 145);
+
+  --ring: #c9a86a;
+  --ring: oklch(0.75 0.15 85);
+
+  /* Charts (dark alt) */
+  --chart-1: oklch(0.6 0.2 264);
+  --chart-2: oklch(0.7 0.17 162);
+  --chart-3: oklch(0.75 0.15 85);
+  --chart-4: oklch(0.6 0.25 304);
+  --chart-5: oklch(0.65 0.25 16);
+
+  --sidebar: oklch(0.2 0.05 145);
+  --sidebar-foreground: oklch(0.97 0.02 85);
+  --sidebar-primary: oklch(0.6 0.2 264);
+  --sidebar-primary-foreground: oklch(0.97 0.02 85);
+  --sidebar-accent: oklch(0.3 0.08 145);
+  --sidebar-accent-foreground: oklch(0.97 0.02 85);
+  --sidebar-border: oklch(0.3 0.08 145);
+  --sidebar-ring: oklch(0.75 0.15 85);
+}
+
+/* Map tokens to Tailwind theme variables */
+@theme inline {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Base layer */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html, body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Optional utility: gold gradient outline used in header/login buttons */
+.dz-gold-outline {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--primary), var(--primary)) padding-box,
+    linear-gradient(90deg, #e0c993, #b99157) border-box;
+  border-radius: 9999px;
+  transition: box-shadow .25s ease;
+}
+.dz-gold-outline:hover {
+  box-shadow: 0 0 22px rgba(201,168,106,.25);
+}
