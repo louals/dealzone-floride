@@ -3,6 +3,7 @@ import HeroSection  from "./components/sections/HeroSection";
 import PropertiesMarquee  from "./components/sections/PropertiesMarquee";
 import FeaturedPropertiesGrid  from "./components/sections/FeaturedPropertiesGrid";
 import CTASection  from "./components/sections/CTASection";
+import Footer from "./components/footer/Footer";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <FeaturedPropertiesGrid />
         <CTASection />
       </main>
+      <Footer />
     </div>
   );
 }

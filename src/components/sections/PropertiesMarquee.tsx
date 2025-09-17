@@ -55,7 +55,7 @@ export default function PropertiesMarquee() {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl font-bold text-center text-white mb-4"
         >
-          Featured Properties
+          Sold Properties
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export default function PropertiesMarquee() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-center text-gray-400 text-lg max-w-2xl mx-auto px-4"
         >
-          Discover amazing deals across Florida
+          We started our Real Estate journey with $39,000. A few years later, we exceeded our goals with over 100 doors!
         </motion.p>
       </div>
 

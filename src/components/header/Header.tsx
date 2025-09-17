@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
@@ -34,7 +32,9 @@ export default function Header() {
               className="w-12 h-12 lg:w-14 lg:h-14 object-contain"
             />
             <div className="text-[#f1f3ee]">
-              <h1 className="font-bold text-lg lg:text-xl">DealZone</h1>
+              <h1 className="font-bold text-lg lg:text-xl">
+                <span className="text-[#d4b369]">D</span>eal<span className="text-[#d4b369]">Z</span>one
+              </h1>
               <p className="text-xs lg:text-sm text-[#d4b369] -mt-1">Florida</p>
             </div>
           </motion.div>

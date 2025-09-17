@@ -15,14 +15,17 @@ export default function CTASection() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance"
-        >
-          Ready to Move to Florida?
+       <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text 
+                        bg-gradient-to-r from-[#d4b369] via-[#fceabb] to-[#d4b369] 
+                        animate-shimmer"
+            >
+            Ready to Move to Florida?
         </motion.h2>
+
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -39,18 +42,7 @@ export default function CTASection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-[#b38e4f] to-[#d4b369] hover:from-[#d4b369] hover:to-[#b38e4f] text-white font-bold px-10 py-6 text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4b369]/30 group"
-          >
-            Get Started
-            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </Button>
 
-          <div className="text-center sm:text-left">
-            <p className="text-[#d4b369] font-semibold text-lg">Free Consultation</p>
-            <p className="text-gray-400 text-sm">No commitment required</p>
-          </div>
         </motion.div>
 
         <motion.div

@@ -6,7 +6,7 @@ import wmp from "../../assets/WMPLogoBlack.png";
 import KDealZoneLogo from "../../assets/KDealZoneLogo.png";
 import logo from "../../assets/bus.png";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-black text-white relative overflow-hidden" aria-label="Site Footer">
       {/* Effet doré en arrière-plan */}

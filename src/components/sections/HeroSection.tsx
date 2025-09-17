@@ -1,5 +1,3 @@
-"use client"
-
 import { motion } from "framer-motion"
 import { Button } from "../ui/Button"
 
@@ -29,13 +27,16 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 text-balance"
-        >
-          Find Your Dream Home in Florida
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 text-transparent bg-clip-text 
+                        bg-gradient-to-r from-[#d4b369] via-[#fceabb] to-[#d4b369] 
+                        animate-shimmer"
+            >
+            Find Your Dream Home in Florida
         </motion.h1>
+
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
