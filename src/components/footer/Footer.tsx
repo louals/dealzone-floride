@@ -1,118 +1,147 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Linkedin, Phone, Mail, MapPin } from "lucide-react"
+// import { Phone, Mail, MapPin } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { motion } from "framer-motion";
+import wmp from "../../assets/WMPLogoBlack.png";
+import KDealZoneLogo from "../../assets/KDealZoneLogo.png";
+import logo from "../../assets/bus.png";
 
 export function Footer() {
   return (
-    <footer className="bg-emerald-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-xl font-bold text-white">Z</span>
-              </div>
-              <span className="text-xl font-bold">Dealzone Florida</span>
-            </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Your trusted partner in Florida real estate. We help you find the perfect home in the Sunshine State with
-              unmatched expertise and service.
-            </p>
-            <div className="flex space-x-4">
-              <Facebook className="w-5 h-5 text-gray-400 hover:text-amber-400 cursor-pointer transition-colors" />
-              <Instagram className="w-5 h-5 text-gray-400 hover:text-amber-400 cursor-pointer transition-colors" />
-              <Twitter className="w-5 h-5 text-gray-400 hover:text-amber-400 cursor-pointer transition-colors" />
-              <Linkedin className="w-5 h-5 text-gray-400 hover:text-amber-400 cursor-pointer transition-colors" />
-            </div>
-          </div>
+    <footer className="bg-black text-white relative overflow-hidden" aria-label="Site Footer">
+      {/* Effet doré en arrière-plan */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent pointer-events-none"></div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-amber-400">Quick Links</h3>
-            <div className="space-y-2">
-              <Link to="/" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Home
-              </Link>
-              <Link to="/buy" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Buy Properties
-              </Link>
-              <Link to="/sell" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Sell Property
-              </Link>
-              <Link to="/blog" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Blog
-              </Link>
-              <Link to="/about" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                About Us
-              </Link>
-            </div>
-          </div>
+      <div className="relative container mx-auto px-6 lg:px-12 py-12">
+        
+        {/* Slogan */}
+<motion.div 
+  initial={{ opacity: 0, scale: 0.9 }} 
+  whileInView={{ opacity: 1, scale: 1 }} 
+  transition={{ duration: 0.6 }} 
+  viewport={{ once: true }}
+  className="flex justify-evenly items-center 
+             bg-gradient-to-r from-emerald-950 via-emerald-900 to-black 
+             py-10 rounded-2xl 
+             shadow-[0_0_25px_rgba(201,168,106,0.25)] 
+             border border-amber-400/40"
+>
+  {[{src: logo, alt: "Bus Logo", link: "https://www.jkrealestatepartners.com/bustour"},
+    {src: KDealZoneLogo, alt: "DealZone Logo", link: "https://www.jkrealestatepartners.com/"},
+    {src: wmp, alt: "WMP Logo", link: "http://wemindproperties.com/"}].map(({src, alt, link}, i) => (
+    <motion.a 
+      key={i}
+      href={link} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.1, rotate: 2 }}
+      className="transition-transform"
+    >
+      <img 
+        src={src} 
+        alt={alt} 
+        className="h-24 md:h-32 object-contain" 
+      />
+    </motion.a>
+  ))}
+</motion.div>
 
-          {/* Services */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-amber-400">Services</h3>
-            <div className="space-y-2">
-              <Link to="/residential" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Residential Sales
-              </Link>
-              <Link to="/commercial" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Commercial Real Estate
-              </Link>
-              <Link to="/investment" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Investment Properties
-              </Link>
-              <Link
-                to="/property-management"
-                className="block text-gray-300 hover:text-amber-400 transition-colors text-sm"
+
+
+{/* Liens en grille avec logo plus grand */} 
+<div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 items-start md:items-center">
+
+  {/* Quick Links */}
+  <div className="text-center md:text-left">
+    <div className="space-y-3">
+      {["Home","Buy","Sell","Contact","Become a Provider"].map((item, i) => (
+        <Link 
+          key={i} 
+          to="/" 
+          className="block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
+        >
+          {item}
+          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-amber-400 
+                          transition-all duration-500 group-hover:w-full"></span>
+        </Link>
+      ))}
+    </div>
+  </div>
+
+  {/* Services */}
+  <div className="text-center md:text-left">
+    <div className="space-y-3">
+      {["Log In","Terms Of Use","Confidentiality","Accessibility","About Us"].map((service, i) => (
+        <Link 
+          key={i} 
+          to="/" 
+          className="block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
+        >
+          {service}
+          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-amber-400 
+                          transition-all duration-500 group-hover:w-full"></span>
+        </Link>
+      ))}
+    </div>
+  </div>
+
+  {/* Logo agrandi aligné avec Services */}
+  <motion.div 
+    initial={{ opacity: 0, y: 30 }} 
+    whileInView={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.8 }} 
+    viewport={{ once: true }}
+    className="flex justify-center md:justify-end"
+  >
+    <a href="https://www.jkrealestatepartners.com/" target="_blank" rel="noopener noreferrer">
+      <img 
+        src={KDealZoneLogo} 
+        alt="DealZone Logo" 
+        className="h-28 md:h-46 object-contain opacity-90 hover:opacity-100 
+                   hover:scale-110 transition-all duration-500 
+                   drop-shadow-[0_0_15px_rgba(201,168,106,0.7)]"
+      />
+    </a>
+  </motion.div>
+</div>
+
+
+
+
+
+        {/* Bas de footer */}
+        <div className="mt-12 border-t border-amber-500/20 pt-6 flex flex-col md:flex-row items-center justify-between text-gray-400 text-xs">
+          {/* Copyright */}
+          <p>© {new Date().getFullYear()} <span className="text-amber-400 font-semibold">DealZone</span>. All Rights Reserved.</p>
+
+          {/* Social Icons */}
+          <div className="flex space-x-4 my-4 md:my-0">
+            {[{icon: FaLinkedinIn, link:"https://www.linkedin.com/company/jksrealestatepartners/?trk=ppro_cprof&originalSubdomain=ca"},
+              {icon: FaInstagram, link:"https://www.instagram.com/janie__grenier/"},
+              {icon: FaFacebookF, link:"https://www.facebook.com/Nowfortomorrowclub"}].map(({icon:Icon,link},i)=>(
+              <motion.a
+                key={i}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2 }}
+                className="p-2 border border-amber-400 rounded-full text-lg hover:bg-amber-400 hover:text-black hover:shadow-lg hover:shadow-amber-400/40 transition-all duration-300"
               >
-                Property Management
-              </Link>
-              <Link to="/consultation" className="block text-gray-300 hover:text-amber-400 transition-colors text-sm">
-                Real Estate Consultation
-              </Link>
-            </div>
+                <Icon />
+              </motion.a>
+            ))}
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-amber-400">Contact Us</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-amber-400" />
-                <span className="text-gray-300 text-sm">(305) 555-DEAL</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-amber-400" />
-                <span className="text-gray-300 text-sm">info@dealzoneflorida.com</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-amber-400 mt-0.5" />
-                <span className="text-gray-300 text-sm">
-                  123 Ocean Drive
-                  <br />
-                  Miami Beach, FL 33139
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-emerald-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 Dealzone Florida. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">
-              Terms of Service
-            </Link>
-            <Link to="/sitemap" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">
-              Sitemap
-            </Link>
-          </div>
+          {/* Powered by */}
+          <p>
+            Powered by{" "}
+            <a href="https://wintechnologie.ca/" target="_blank" rel="noopener noreferrer"
+              className="text-amber-400  hover:decoration-wavy">
+              WinTechnologie.ca
+            </a>
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
