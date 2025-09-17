@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.13",
+    "class-variance-authority": "^0.7.1",
     "firebase": "^12.2.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.544.0",
@@ -31,5 +33,18 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/productiondealzone-fraction-byte/dealzone-floride.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/productiondealzone-fraction-byte/dealzone-floride/issues"
+  },
+  "homepage": "https://github.com/productiondealzone-fraction-byte/dealzone-floride#readme"
 }

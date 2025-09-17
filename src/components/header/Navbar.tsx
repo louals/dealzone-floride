@@ -1,78 +1,103 @@
-"use client"
+import { motion } from "framer-motion"
 
-import { Link } from "react-router-dom";
-import { useState } from "react"
-import { Button } from "../ui/Button"
+interface NavbarProps {
+  isMobile?: boolean
+  onItemClick?: () => void
+}
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "Buy", href: "/buy" },
+  { name: "Sell", href: "/sell" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+  { name: "About Us", href: "/about" },
+  { name: "Become a Provider", href: "/provider" },
+]
 
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Buy", href: "/buy" },
-    { name: "Sell", href: "/sell" },
-    { name: "Blog", href: "/blog" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-    { name: "Become a Provider", href: "/become-provider" },
-  ]
+export default function Navbar({ isMobile = false, onItemClick }: NavbarProps) {
+  const handleItemClick = () => {
+    if (onItemClick) {
+      onItemClick()
+    }
+  }
+
+  if (isMobile) {
+    return (
+      <nav className="space-y-2">
+        {navItems.map((item, index) => (
+          <motion.a
+            key={item.name}
+            href={item.href}
+            className="block px-4 py-3 text-[#f1f3ee] hover:text-[#d4b369] transition-colors duration-300 rounded-lg hover:bg-[#b38e4f]/10"
+            onClick={handleItemClick}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: index * 0.1,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              x: 10,
+              scale: 1.05,
+              boxShadow: "0 0 20px rgba(179, 142, 79, 0.3)",
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="font-medium">{item.name}</span>
+          </motion.a>
+        ))}
+      </nav>
+    )
+  }
 
   return (
-    <nav className="bg-emerald-900 text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="hover:text-amber-400 transition-colors duration-200 px-3 py-2 text-sm font-medium hover:bg-emerald-800 rounded-md"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-amber-400 hover:bg-emerald-800"
-            >
-              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-emerald-800 rounded-lg mt-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="hover:text-amber-400 block px-3 py-2 text-base font-medium transition-colors duration-200 hover:bg-emerald-700 rounded-md"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
+    <nav className="flex items-center space-x-8">
+      {navItems.map((item) => (
+        <motion.a
+          key={item.name}
+          href={item.href}
+          className="relative text-[#f1f3ee] hover:text-[#d4b369] transition-colors duration-300 font-medium group"
+          whileHover={{
+            y: -3,
+            scale: 1.05,
+            textShadow: "0 0 8px rgba(212, 179, 105, 0.6)",
+          }}
+          whileTap={{ scale: 0.95 }}
+          transition={{
+            duration: 0.2,
+            type: "spring",
+            stiffness: 400,
+            damping: 17,
+          }}
+        >
+          <span>{item.name}</span>
+          <motion.div
+            className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#b38e4f] to-[#d4b369] rounded-full"
+            initial={{ width: 0, opacity: 0 }}
+            whileHover={{
+              width: "100%",
+              opacity: 1,
+              boxShadow: "0 0 12px rgba(179, 142, 79, 0.8), 0 0 24px rgba(212, 179, 105, 0.4)",
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0 -z-10 rounded-lg"
+            initial={{ background: "transparent" }}
+            whileHover={{
+              background: "linear-gradient(to right, rgba(179, 142, 79, 0.1), rgba(212, 179, 105, 0.1))",
+              scale: 1.1,
+              boxShadow: "0 0 20px rgba(179, 142, 79, 0.2)",
+            }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.a>
+      ))}
     </nav>
   )
 }
