@@ -238,3 +238,8 @@
 }
 
 
+.animate-shine {
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+

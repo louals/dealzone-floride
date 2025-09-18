@@ -1,21 +1,20 @@
-import Header from "./components/header/Header";
-import HeroSection  from "./components/sections/HeroSection";
-import PropertiesMarquee  from "./components/sections/PropertiesMarquee";
-import FeaturedPropertiesGrid  from "./components/sections/FeaturedPropertiesGrid";
-import CTASection  from "./components/sections/CTASection";
-import Footer from "./components/footer/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import NotFound from "./pages/NotFound/NotFound";
 
 export default function App() {
   return (
-    <div className="bg-background text-foreground">
-      <Header />
-      <main>
-        <HeroSection />
-        <PropertiesMarquee />
-        <FeaturedPropertiesGrid />
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

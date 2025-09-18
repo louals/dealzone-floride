@@ -10,9 +10,11 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white relative overflow-hidden" aria-label="Site Footer">
       {/* Effet doré en arrière-plan */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent pointer-events-none"></div>
+      {/* Effet décoratif clair et premium */}
+<div className="absolute inset-0 bg-gradient-to-tr from-amber-200/30 via-white/10 to-emerald-200/20 pointer-events-none blur-2xl"></div>
 
-      <div className="relative container mx-auto px-6 lg:px-12 py-12">
+<div className="relative container mx-auto px-6 lg:px-12 py-12">
+
         
         {/* Slogan */}
 <motion.div 
@@ -20,11 +22,7 @@ export default function Footer() {
   whileInView={{ opacity: 1, scale: 1 }} 
   transition={{ duration: 0.6 }} 
   viewport={{ once: true }}
-  className="flex justify-evenly items-center 
-             bg-gradient-to-r from-emerald-950 via-emerald-900 to-black 
-             py-10 rounded-2xl 
-             shadow-[0_0_25px_rgba(201,168,106,0.25)] 
-             border border-amber-400/40"
+  className="flex justify-evenly items-center py-10 gap-12"
 >
   {[{src: logo, alt: "Bus Logo", link: "https://www.jkrealestatepartners.com/bustour"},
     {src: KDealZoneLogo, alt: "DealZone Logo", link: "https://www.jkrealestatepartners.com/"},
@@ -40,50 +38,55 @@ export default function Footer() {
       <img 
         src={src} 
         alt={alt} 
-        className="h-24 md:h-32 object-contain" 
+        className="h-20 md:h-28 object-contain"
       />
     </motion.a>
   ))}
 </motion.div>
 
+{/* Bas de footer */}
+        <div className="mt-12 border-t border-amber-500/20 pt-6 flex flex-col md:flex-row items-center justify-between text-gray-400 text-xs"></div>
 
 
 {/* Liens en grille avec logo plus grand */} 
 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 items-start md:items-center">
 
   {/* Quick Links */}
-  <div className="text-center md:text-left">
-    <div className="space-y-3">
-      {["Home","Buy","Sell","Contact","Become a Provider"].map((item, i) => (
+<div className="text-center md:text-left">
+  <div className="space-y-3">
+    {["Home","Buy","Sell","Contact","Become a Provider"].map((item, i) => (
+      <div key={i}> {/* Garde chaque mot sur une ligne */}
         <Link 
-          key={i} 
           to="/" 
-          className="block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
+          className="inline-block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
         >
           {item}
-          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-amber-400 
-                          transition-all duration-500 group-hover:w-full"></span>
+          <span className="absolute left-0 -bottom-0.5 h-[2px] bg-amber-400 
+                          w-0 transition-all duration-500 group-hover:w-full"></span>
         </Link>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
+</div>
 
-  {/* Services */}
-  <div className="text-center md:text-left">
-    <div className="space-y-3">
-      {["Log In","Terms Of Use","Confidentiality","Accessibility","About Us"].map((service, i) => (
+{/* Services */}
+<div className="text-center md:text-left">
+  <div className="space-y-3">
+    {["Log In","Terms Of Use","Confidentiality","Accessibility","About Us"].map((service, i) => (
+      <div key={i}> {/* Garde chaque mot sur une ligne */}
         <Link 
-          key={i} 
           to="/" 
-          className="block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
+          className="inline-block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
         >
           {service}
-          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-amber-400 
-                          transition-all duration-500 group-hover:w-full"></span>
+          <span className="absolute left-0 -bottom-0.5 h-[2px] bg-amber-400 
+                          w-0 transition-all duration-500 group-hover:w-full"></span>
         </Link>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
+</div>
+
 
   {/* Logo agrandi aligné avec Services */}
   <motion.div 

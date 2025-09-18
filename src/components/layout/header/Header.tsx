@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import Navbar from "./Navbar"
-import LogoDealZone from "../../assets/LogoDealZonepng.png";
+import LogoDealZone from "../../../assets/LogoDealZonepng.png";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
