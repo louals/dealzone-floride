@@ -2,28 +2,28 @@ import { motion } from "framer-motion"
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#202720]">
-      {/* Additional gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#202720] via-[#1a1f1a] to-[#0f120f]" />
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#1a1f1a] via-[#202720] to-[#0b0d0b]">
+      {/* Overlay doré subtil */}
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#1a1a1a]/20 to-transparent" />
 
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-[#d4b369] rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#b38e4f] rounded-full blur-3xl" />
+      {/* Éléments décoratifs lumineux */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-15">
+        <div className="absolute top-24 left-16 w-32 h-32 bg-[#d4b369]/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-[#b38e4f]/30 rounded-full blur-3xl" />
       </div>
 
+      {/* Contenu principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-       <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text 
-                        bg-gradient-to-r from-[#d4b369] via-[#fceabb] to-[#d4b369] 
-                        animate-shimmer"
-            >
-            Ready to Move to Florida?
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 
+                     text-transparent bg-clip-text 
+                     bg-gradient-to-r from-[#d4b369] via-[#fceabb] to-[#d4b369]"
+        >
+          Ready to Move to Florida?
         </motion.h2>
-
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -40,9 +40,10 @@ export default function CTASection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
-
+          {/* Tu peux ajouter des boutons ici si nécessaire */}
         </motion.div>
 
+        {/* Statistiques */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

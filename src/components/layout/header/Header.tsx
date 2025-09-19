@@ -2,6 +2,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import Navbar from "./Navbar"
+import { Link } from "react-router-dom"
 import LogoDealZone from "../../../assets/LogoDealZonepng.png";
 
 export default function Header() {
@@ -13,7 +14,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-[#202720] shadow-lg"
+className="absolute top-0 left-0 right-0 z-50 bg-[#202720] shadow-lg"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -45,13 +46,17 @@ export default function Header() {
           </div>
 
           {/* Desktop Login Button */}
-          <motion.button
-            className="hidden lg:block px-8 py-3 border-2 border-[#b38e4f] text-[#f1f3ee] rounded-full font-medium transition-all duration-300 hover:shadow-[0_0_20px_rgba(179,142,79,0.5)] hover:border-[#d4b369] hover:text-[#d4b369]"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            LOG IN
-          </motion.button>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+  <Link
+    to="/login"
+    className="hidden lg:block px-8 py-3 border-2 border-[#b38e4f] 
+               text-[#f1f3ee] rounded-full font-medium transition-all 
+               duration-300 hover:shadow-[0_0_20px_rgba(179,142,79,0.5)] 
+               hover:border-[#d4b369] hover:text-[#d4b369]"
+  >
+    LOG IN
+  </Link>
+</motion.div>
 
           {/* Mobile Menu Button */}
           <button

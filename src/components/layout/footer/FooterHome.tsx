@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 // import { Phone, Mail, MapPin } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
-import wmp from "../../assets/WMPLogoBlack.png";
-import KDealZoneLogo from "../../assets/KDealZoneLogo.png";
-import logo from "../../assets/bus.png";
+import wmp from "../../../assets/WMPLogoBlack.png";
+import KDealZoneLogo from "../../../assets/KDealZoneLogo.png";
+import logo from "../../../assets/bus.png";
 
-export default function Footer() {
+export default function FooterHome() {
   return (
     <footer className="bg-black text-white relative overflow-hidden" aria-label="Site Footer">
       {/* Effet doré en arrière-plan */}

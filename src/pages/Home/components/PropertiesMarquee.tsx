@@ -47,7 +47,7 @@ export default function PropertiesMarquee() {
   const duplicatedProperties = [...properties, ...properties]
 
   return (
-    <section className="bg-[#202720] py-16 overflow-hidden">
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#1a1f1a] via-[#202720] to-[#0b0d0b]">
       <div className="mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
