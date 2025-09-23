@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section
       className="relative h-screen w-full bg-fixed bg-center bg-cover flex items-center justify-center text-center"
-      style={{ backgroundImage: "url('/luxury-florida-waterfront-hero.jpg')" }}
+      style={{ backgroundImage: "url('/luxury-florida-waterfront-hero2.jpg')" }}
     >
       {/* Overlay sombre */}
       <div className="absolute inset-0 bg-black/50" />

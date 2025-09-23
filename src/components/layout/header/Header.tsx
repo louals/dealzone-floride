@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react"
 import Navbar from "./Navbar"
 import { Link } from "react-router-dom"
 import LogoDealZone from "../../../assets/LogoDealZonepng.png";
+import { FiLogIn } from "react-icons/fi";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -14,11 +15,13 @@ export default function Header() {
 
   return (
     <motion.header
-className="absolute top-0 left-0 right-0 z-50 bg-[#202720] shadow-lg"
+      className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-br from-[#0d0f0d] via-[#1c2420] to-[#101311] shadow-lg"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#e6c77c]/20 via-transparent to-[#ffdd95]/20 blur-2xl" />
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
@@ -47,15 +50,16 @@ className="absolute top-0 left-0 right-0 z-50 bg-[#202720] shadow-lg"
 
           {/* Desktop Login Button */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-  <Link
-    to="/login"
-    className="hidden lg:block px-8 py-3 border-2 border-[#b38e4f] 
-               text-[#f1f3ee] rounded-full font-medium transition-all 
-               duration-300 hover:shadow-[0_0_20px_rgba(179,142,79,0.5)] 
-               hover:border-[#d4b369] hover:text-[#d4b369]"
-  >
-    LOG IN
-  </Link>
+ <Link
+  to="/login"
+  className="hidden lg:inline-flex items-center gap-2 rounded-full px-6 py-2.5
+             bg-white/15 text-[#f1f3ee] border border-white/30 backdrop-blur-md
+             transition-all hover:bg-white/25 hover:shadow-[0_0_20px_rgba(230,199,124,0.35)]
+             focus:outline-none focus:ring-2 focus:ring-[#e6c77c]/60"
+>
+  <FiLogIn className="text-[#e6c77c]" />
+  <span className="tracking-wide">LOG IN</span>
+</Link>
 </motion.div>
 
           {/* Mobile Menu Button */}

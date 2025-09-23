@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { Phone, Mail, MapPin } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 import KDealZoneLogo from "../../../assets/KDealZoneLogo.png";
@@ -7,21 +6,19 @@ import KDealZoneLogo from "../../../assets/KDealZoneLogo.png";
 export default function Footer() {
   return (
     <footer className="bg-black text-white relative overflow-hidden" aria-label="Site Footer">
-      {/* Effet doré en arrière-plan */}
-      {/* Effet décoratif clair et premium */}
+   
 <div className="absolute inset-0 bg-gradient-to-tr from-amber-200/30 via-white/10 to-emerald-200/20 pointer-events-none blur-2xl"></div>
 
 <div className="relative container mx-auto px-6 lg:px-12 py-12">
 
 
-{/* Liens en grille avec logo plus grand */} 
 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 items-start md:items-center">
 
   {/* Quick Links */}
 <div className="text-center md:text-left">
   <div className="space-y-3">
     {["Home","Buy","Sell","Contact","Become a Provider"].map((item, i) => (
-      <div key={i}> {/* Garde chaque mot sur une ligne */}
+      <div key={i}> 
         <Link 
           to="/" 
           className="inline-block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
@@ -39,7 +36,7 @@ export default function Footer() {
 <div className="text-center md:text-left">
   <div className="space-y-3">
     {["Log In","Terms Of Use","Confidentiality","Accessibility","About Us"].map((service, i) => (
-      <div key={i}> {/* Garde chaque mot sur une ligne */}
+      <div key={i}> 
         <Link 
           to="/" 
           className="inline-block text-gray-300 hover:text-amber-400 relative group text-lg tracking-wide transition"
@@ -54,7 +51,6 @@ export default function Footer() {
 </div>
 
 
-  {/* Logo agrandi aligné avec Services */}
   <motion.div 
     initial={{ opacity: 0, y: 30 }} 
     whileInView={{ opacity: 1, y: 0 }} 
