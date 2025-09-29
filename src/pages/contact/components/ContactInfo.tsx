@@ -33,7 +33,7 @@ export function ContactInfo() {
           const Icon = method.icon;
 
           const content = (
-            <Card className="group relative isolate transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-[#0d0f0d] via-[#1c2420] to-[#101311] bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-[0_6px_24px_rgba(0,0,0,0.45)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.55)]">
+            <Card className="group relative isolate transition-all duration-300 hover:-translate-y-1 !bg-gradient-to-br from-[#0d0f0d] via-[#1c2420] to-[#101311] bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-[0_6px_24px_rgba(0,0,0,0.45)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.55)]">
               {/* halo fin */}
               <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-[#e6c77c]/15 via-transparent to-[#ffdd95]/15 blur-xl" />
               <div className="absolute inset-0 rounded-2xl

@@ -42,7 +42,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="relative isolate bg-gradient-to-br from-[#0d0f0d] via-[#1c2420] to-[#101311] bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.6)] rounded-2xl">
+    <Card className="relative isolate !bg-gradient-to-br from-[#0d0f0d] via-[#1c2420] to-[#101311] bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.6)] rounded-2xl">
       <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-[#e6c77c]/20 via-transparent to-[#ffdd95]/20 blur-2xl" />
       <div className="absolute inset-0 rounded-2xl
             bg-gradient-to-br from-[#e6c77c]/20 via-transparent to-[#ffdd95]/20

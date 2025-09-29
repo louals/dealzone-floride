@@ -170,23 +170,14 @@ export default function FeaturedPropertiesGrid() {
 
               {/* Top badges */}
               <div className="relative z-10 p-4">
-                <div className="flex items-center justify-between mb-4">
-                  {property.verified && (
-                    <div className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3" />
-                      Verified
-                    </div>
-                  )}
-
-                  <div className="bg-black/70 text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
-                    <Eye className="w-3 h-3" />
-                    {property.views}
-                  </div>
-                </div>
-
-                <div className="absolute top-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-xs">
-                  📷 {property.photos}+
-                </div>
+              <div className="flex items-center justify-between mb-4">
+              {property && (
+              <div className="bg-gradient-to-r from-[#b38e4f] to-[#d4b369] text-white px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow-md">
+              <CheckCircle className="w-3 h-3" />
+              Premium
+              </div>
+              )}
+              </div>
               </div>
 
               {/* Bottom content */}

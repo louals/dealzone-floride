@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../../components/ui/Button";
 import { Clock, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Blog() {
   const articles = [
@@ -42,9 +43,12 @@ export default function Blog() {
               potential of U.S. real estate from anywhere in the world! JK Real Partners' cutting-edge web application
               empowers investors to navigate the complexities of the U.S. real estate market with ease.
             </p>
-            <Button className="bg-gradient-to-r from-[#b38e4f] to-[#d4b369] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-lg shadow-md">
-              See All
-            </Button>
+            <Link
+  to="/allarticles"
+  className="inline-block bg-gradient-to-r from-[#b38e4f] to-[#d4b369] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-lg shadow-md"
+>
+  See All
+</Link>
           </motion.div>
 
           <motion.div
