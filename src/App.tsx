@@ -15,7 +15,14 @@ import Buy from "./pages/buy/buy";
 import BecomeProvider from "./pages/becomeprovider/BecomeProvider";
 import BecomeProfessional from "./pages/becomeprovider/components/BecomeProfessional";
 import AllArticles from "./pages/blog/components/AllArticles";
+import Sell from "./pages/sell/Sell";
 import FirestoreTest from "./pages/FirestoreTest";
+import CompleteProfile from "./pages/completeprofile/CompleteProfile";
+import ProfileGuard from "./components/auth/ProfileGuard";
+import AuthGuard from "./components/auth/AuthGuard";
+import BecomeProfessional2 from "./pages/becomeprovider/components/BecomeProfessional2";
+import BecomeProfessional3 from "./pages/becomeprovider/components/BecomeProfessional3";
+import ApplicationSuccess from "./pages/becomeprovider/components/ApplicationSuccess";
 
 function App() {
   return (
@@ -33,17 +40,46 @@ function App() {
           <Route path="/buy" element={<Buy />} />
           <Route path="/become-provider" element={<BecomeProvider />} />
           <Route path="/become-professional" element={<BecomeProfessional />} />
+          <Route path="/Become-Professional-2" element={<BecomeProfessional2 />} />
+          <Route path="/Become-Professional-3" element={<BecomeProfessional3 />} />
+          <Route path="/application-success" element={<ApplicationSuccess />} />
           <Route path="/allarticles" element={<AllArticles />} />
           <Route path="*" element={<NotFound />} />
+         <Route
+  path="/sell"
+  element={
+    <AuthGuard>
+      <Sell />
+    </AuthGuard>
+  }
+/>
         </Route>
 
         
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-                    <Route path="/firestore-test" element={<FirestoreTest />} />
-
         </Route>
+
+        <Route
+  path="/dashboard"
+  element={
+    <ProfileGuard requireCompleteProfile={true}>
+      <Dashboard />
+    </ProfileGuard>
+  }
+/>
+
+
+       <Route
+  path="/complete-profile"
+  element={
+    <ProfileGuard requireCompleteProfile={false}>
+      <CompleteProfile />
+    </ProfileGuard>
+  }
+/>
+
       </Routes>
     </Router>
   );

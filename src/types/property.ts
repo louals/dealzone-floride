@@ -1,0 +1,45 @@
+// src/types/property.ts
+export interface Property {
+  propertyId: string;
+  userId: string; // FK
+  address: string;
+  description: string;
+  price: number;
+  sqft: number;
+  bedrooms: number;
+  bathrooms: number;
+  fullBathrooms: number;
+  rooms: number;
+  floorCondition: string;
+  furnished: string;
+  heating: string[];
+  hoaFees: number;
+  insurance: string;
+  isVacant: string;
+  landSQFT: number;
+  latitude: number;
+  longitude: number;
+  maintenance: number;
+  management: number;
+  monthlyGrossIncome: number;
+  propertyTax: string;
+  rehabCost: number;
+  sellerMessage: string;
+  sellingReason: string;
+  sellingReasonOther: string;
+  soldStatus: string;
+  status: string;
+  customTaxes: number;
+  yearBuilt: number;
+  yearRenovated: number;
+  timesFavorited: number;
+  detailClicks: number;
+  viewCount: number;
+  amenities: string[];
+  features: string[];
+  parking: string[];
+  images: string[];
+  supportingDocuments: string[];
+  createdAt: Date;
+  updatedAt: Date;
+}
